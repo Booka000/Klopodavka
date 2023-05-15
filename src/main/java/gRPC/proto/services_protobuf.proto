@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "gRPC.Shared";
+option java_multiple_files = true;
+
+service Services{
+  rpc connect(Empty) returns (Empty);
+  rpc movesStream(stream Move) returns (stream Move);
+}
+
+message Move{
+   int32 x = 2;
+   int32 y = 3;
+}
+
+message Empty{}
